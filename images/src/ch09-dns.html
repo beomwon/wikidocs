@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;background:#fff}</style></head>
+<body>
+<svg width="1000" height="540" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="1000" height="540" fill="#ffffff"/>
+  <text x="64" y="72" font-size="22" font-weight="700" fill="#1d1d1f" letter-spacing="-0.5">DNS 전화번호부에 적는 세 가지 레코드</text>
+
+  <!-- Row 1 : A -->
+  <rect x="64" y="112" width="872" height="104" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="96" y="148" width="92" height="32" rx="8" fill="#f5f5f7"/>
+  <text x="142" y="169" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1d1f" font-family="Consolas, monospace">A</text>
+  <text x="220" y="156" font-size="15" font-weight="600" fill="#1d1d1f">이 이름은 이 IP야 — 직통 번호</text>
+  <text x="220" y="182" font-size="13" fill="#86868b">루트 도메인(gildong.com)을 연결할 때</text>
+  <text x="904" y="170" text-anchor="end" font-size="13" fill="#1d1d1f" font-family="Consolas, monospace">gildong.com → 76.76.21.21</text>
+
+  <!-- Row 2 : CNAME -->
+  <rect x="64" y="240" width="872" height="104" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="96" y="276" width="92" height="32" rx="8" fill="#f5f5f7"/>
+  <text x="142" y="297" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1d1f" font-family="Consolas, monospace">CNAME</text>
+  <text x="220" y="284" font-size="15" font-weight="600" fill="#1d1d1f">이 이름은 저 이름에게 물어봐 — 착신 전환</text>
+  <text x="220" y="310" font-size="13" fill="#86868b">서브도메인(invite.gildong.com)을 연결할 때</text>
+  <text x="904" y="298" text-anchor="end" font-size="13" fill="#1d1d1f" font-family="Consolas, monospace">invite.gildong.com → xxx.vercel-dns.com</text>
+
+  <!-- Row 3 : NS -->
+  <rect x="64" y="368" width="872" height="104" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="96" y="404" width="92" height="32" rx="8" fill="#f5f5f7"/>
+  <text x="142" y="425" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1d1f" font-family="Consolas, monospace">NS</text>
+  <text x="220" y="412" font-size="15" font-weight="600" fill="#1d1d1f">전화번호부 관리를 통째로 맡긴다 — 관리 위임</text>
+  <text x="220" y="438" font-size="13" fill="#86868b">이후 레코드는 Vercel이 알아서 관리 (9.3절 방법 B)</text>
+  <text x="904" y="426" text-anchor="end" font-size="13" fill="#1d1d1f" font-family="Consolas, monospace">네임서버 → ns1.vercel-dns.com</text>
+
+  <text x="64" y="514" font-size="13" fill="#86868b">외울 필요 없습니다 — 정확한 값은 Vercel 대시보드가 알려 주고, 우리는 받아 적기만 합니다.</text>
+</svg>
+</body></html>

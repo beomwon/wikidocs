@@ -57,38 +57,92 @@ chrome --headless --disable-gpu --screenshot=ch01-journey.png --window-size=2000
 
 ## 1. 표지 — `cover.jpg`
 
-**이건 이미지 생성 모델용이다.** 다만 먼저 확인할 것: 1권 표지(`../vibe-deploy-book/images/cover.jpg`)가 이미 있으므로, **시리즈로 보이게 만드는 것이 새로 잘 만드는 것보다 중요하다.** 1권 표지를 먼저 열어보고 레이아웃·색·타이포를 유지한 채 색상 계열과 소재만 바꾸는 쪽을 권한다.
+**반드시 1권 표지를 먼저 열어보고 시작한다** (`../vibe-deploy-book/images/cover.jpg`). 시리즈물에서는 잘 만드는 것보다 **1권 옆에 놨을 때 같은 책으로 보이는 것**이 중요하다.
 
-제목 글자는 이미지 모델이 한글을 못 쓰므로 **반드시 나중에 얹는다.** 아래 프롬프트는 **글자 없는 배경 아트만** 뽑는 용도다.
+### 1권 표지의 실제 모습 (실측)
+
+- **규격** — 1000 × 1301px (10:13). 2:3이 아니다
+- **배경** — 왼쪽 위 진보라에서 오른쪽 아래 하늘색으로 흐르는 대각선 그라데이션
+- **제목** — 화면 위 25%를 꽉 채우는 아주 굵은 고딕. 1행은 **흰색**(`바이브코딩,`), 2행은 **노란색**(`배포까지 완주`). 글자마다 얇은 어두운 외곽선
+- **그림** — 왼쪽 60%에 검은 코드 에디터 창(신호등 버튼 3개 + `localhost:8000` + 초록 프롬프트 기호). 그 창의 오른쪽 모서리가 **문**이 되어 열려 있고, 문 밖은 초록 언덕·구름·지구본이 있는 밝은 바깥세상
+- **인물** — 보라 후드, 검은 머리, 청바지, 흰 운동화. **흰 편지봉투를 들고 문을 통과해 걸어 나가는 뒷모습**
+- **화풍** — 두꺼운 검은 외곽선, 평면 채색, 그림자 거의 없음. 웹툰·스티커에 가까운 친근한 플랫 일러스트. 미니멀도 아니고 사실적이지도 않다
+
+### 2권의 그림 아이디어
+
+1권이 **"안에서 밖으로 나가는 그림"** 이었다면, 2권은 **"나가서 그것을 지켜보는 그림"** 이다. 같은 인물이 이미 바깥세상에 서 있고, 자기가 내보낸 것에 지도와 날씨를 꽂고 상태를 들여다본다.
+
+- 문은 이제 **인물 뒤쪽**에 작게 있다 (1권을 읽은 사람이 알아보는 연결고리)
+- 인물이 들고 있는 것: 편지봉투가 아니라 **초록 점이 켜진 대시보드 화면의 폰**
+- 인물 앞에 자기 초대장이 **작은 입간판**처럼 서 있고, 거기에 **지도 핀**과 **날씨 구름**이 케이블로 꽂혀 있다
+
+### 이미지 생성 프롬프트 (글자 없는 그림만)
+
+이미지 모델은 한글을 못 쓴다. **제목은 반드시 나중에 얹는다.** 아래는 그림만 뽑는 프롬프트다.
 
 ```
-A clean, minimal book cover background illustration. No text, no letters, no typography anywhere.
+Flat vector illustration for a book cover, in the style of a friendly Korean webtoon sticker
+illustration. Thick black outlines, flat cel shading, almost no gradients inside objects,
+no photorealism, no 3D render gloss.
 
-Subject: a single small illuminated control panel or dashboard floating in calm empty space,
-seen from a slight angle. On its face, six simple rounded rectangular tiles arranged in a grid —
-three of them glowing soft green, one amber, one dimmed. Thin light-lines run outward from the
-panel to three small distant nodes: a map pin, a cloud, and a database cylinder. The lines are
-delicate and precise, like a circuit diagram drawn with a fine pen.
+Scene: a young person with black hair, wearing a purple hoodie, blue jeans and white sneakers,
+standing on a bright green grassy hill, seen from behind at a three-quarter angle. They hold up
+a smartphone in one hand; the phone screen shows a simple dashboard of six stacked rounded tiles,
+three of them glowing green, one amber. In front of them stands a small signboard shaped like a
+web page — a rounded white card on a post. Two cables run from the signboard to two floating
+objects: a red map pin on the left and a fluffy white weather cloud with a small sun on the right.
+Far behind the person, small in the distance, stands an open dark doorway shaped like a code
+editor window, light spilling out of it — they have already walked through it.
+Green rolling hills, a winding path, chunky cartoon clouds, a few sparkle stars, and a small
+globe floating in the upper right.
 
-Mood: quiet competence. Night before an event. Everything under control.
-Style: flat vector illustration with subtle depth, Apple keynote aesthetic, generous negative space,
-soft even lighting, no harsh shadows, no 3D render gloss.
-Palette: deep navy to near-black background (#0b1220 to #1d1d1f), one accent blue (#0071e3),
-muted warm grey (#86868b), small accents of signal green and amber. Restrained — five colors maximum.
-Composition: subject in the lower two-thirds, large calm empty area at the top for a title to be
-placed later. Vertical book cover proportions, 2:3 aspect ratio.
+Background: a smooth diagonal gradient from deep violet purple in the top-left to bright cyan
+sky-blue in the bottom-right.
+Palette: violet purple, cyan blue, bright grass green, white, warm yellow accents, small touches
+of signal green and amber. Saturated and cheerful.
 
-Negative prompt: text, letters, words, numbers, watermark, logo, korean characters, ui screenshot,
-cluttered, busy, neon cyberpunk, glitch, lens flare, people, faces, hands, photorealistic
+Composition: vertical book cover, aspect ratio 10:13. Leave the TOP 30 PERCENT of the image
+visually calm and uncluttered — only sky and gradient there — because a large title will be
+placed over it later. All the illustration detail sits in the lower two-thirds.
+
+No text, no letters, no words, no numbers, no typography anywhere in the image.
 ```
 
-**표지 문구 (나중에 얹을 것)**
+**Negative prompt**
 
-- 주제목: `바이브코딩, 배포 다음의 세계`
-- 부제: `API 연동과 관리자 페이지 — 만든 사람에서 운영하는 사람으로`
-- 상단 작게: `「바이브코딩, 배포까지 완주」 후속편`
+```
+text, letters, words, numbers, korean characters, typography, watermark, logo, signature,
+photorealistic, 3d render, realistic skin, detailed face, front-facing portrait, cluttered,
+busy background, dark, gloomy, neon cyberpunk, glitch, lens flare, motion blur, noise, grain,
+low contrast, muddy colors, extra limbs, deformed hands
+```
 
-시리즈 표기를 넣어야 1권 독자가 알아본다.
+### 제목 얹기 (그림 위에 직접)
+
+1권과 같은 규칙으로 맞춘다. 안 그러면 시리즈로 안 보인다.
+
+| 항목 | 값 |
+|---|---|
+| 위치 | 상단, 이미지 높이의 위 25~30% |
+| 1행 | `바이브코딩,` — **흰색** |
+| 2행 | `배포 다음의 세계` — **노란색** |
+| 서체 | 아주 굵은 고딕 (Pretendard Black, 검은고딕, G마켓 산스 Bold 등) |
+| 처리 | 글자마다 얇은 어두운 외곽선. 1권과 같은 두께로 |
+| 자간 | 좁게. 두 행 모두 폭을 꽉 채워 좌우 여백을 맞춤 |
+
+2권은 제목 2행이 1권(`배포까지 완주`, 6자)보다 길다(`배포 다음의 세계`, 8자). **글자 크기를 줄이지 말고 자간을 좁혀서** 1권과 같은 덩치로 보이게 맞추는 편이 낫다.
+
+부제와 시리즈 표기는 제목 아래 작게 넣는다. 시리즈 표기가 있어야 1권 독자가 알아본다.
+
+- 부제: `API 연동과 관리자 페이지`
+- 시리즈: `「바이브코딩, 배포까지 완주」 후속편`
+
+### 만든 뒤 확인
+
+- **1권 표지와 나란히 놓고 본다.** 같은 시리즈로 보이지 않으면 배경 그라데이션 각도와 제목 크기부터 다시 맞춘다
+- 썸네일 크기(폭 160px)로 줄여서 제목이 읽히는지 본다. 위키독스 책 목록과 GitHub README에서 그 크기로 보인다
+- 전자책 표지는 저자가 직접 교체할 수 있다. A4 PDF로 만들어 전달하면 적용된다
+- 파일명은 `cover.jpg`, 위치는 `images/`. README 두 곳(`vibe-after-deploy-book/README.md`, 저장소 루트 `README.md`)이 이미 이 경로를 참조하고 있다
 
 ---
 

@@ -33,7 +33,26 @@ AI가 코드는 다 짜줍니다. 이 책은 당신이 AI에게 **"배포해줘"
 </tr>
 </table>
 
-> 다음 책을 시작하면 이 목록에 추가됩니다.
+<table>
+<tr>
+<td width="180" align="center" valign="top">
+<a href="vibe-after-deploy-book/"><img src="vibe-after-deploy-book/images/cover.jpg" alt="바이브코딩, 배포 다음의 세계" width="160" /></a>
+</td>
+<td valign="top">
+
+### [바이브코딩, 배포 다음의 세계](vibe-after-deploy-book/)
+
+「배포까지 완주」 **후속편.** 배포는 끝났고 이제 운영입니다. 초대장에 카카오맵과 기상청 날씨를 붙이고, 서버·DB·외부 API가 지금 멀쩡한지 **한 화면에서 30초 만에** 확인하는 관리자 페이지를 만듭니다. AI가 시킨 대로 안 만들어줬을 때 손으로 고치는 법(부록 B)까지.
+
+`카카오맵 API` `공공데이터포털` `관리자 대시보드` `모니터링` `비개발자 대상`
+
+**12장 + 부록 4편 · 66개 절** · 집필 중
+
+[📁 원고 보기](vibe-after-deploy-book/)
+
+</td>
+</tr>
+</table>
 
 ## 🗂 저장소 구조
 
@@ -42,17 +61,25 @@ AI가 코드는 다 짜줍니다. 이 책은 당신이 AI에게 **"배포해줘"
 ```
 wikidocs/
 ├── README.md                    ← 지금 이 파일 (책 목록)
-└── vibe-deploy-book/            ← 책 한 권
-    ├── README.md                  책 소개 (표지·목차·링크)
-    ├── manuscript/                원고
-    │   ├── ch01/1-1.md              장별 폴더, 절별 파일
-    │   ├── ch02/...
-    │   └── appendix/                부록
-    └── images/                    본문 이미지
-        ├── cover.jpg                표지
-        ├── chNN-*.png               다이어그램 (위키독스 업로드본)
-        └── src/*.html               다이어그램 원본 SVG 소스
+├── vibe-deploy-book/            ← 1권
+│   ├── README.md                  책 소개 (표지·목차·링크)
+│   ├── manuscript/                원고
+│   │   ├── ch01/1-1.md              장별 폴더, 절별 파일
+│   │   ├── ch02/...
+│   │   └── appendix/                부록
+│   └── images/                    본문 이미지
+│       ├── cover.jpg                표지
+│       ├── chNN-*.png               다이어그램 (위키독스 업로드본)
+│       └── src/*.html               다이어그램 원본 SVG 소스
+└── vibe-after-deploy-book/      ← 2권 (같은 구조 + 집필용 문서 3종)
+    ├── TOC.md                     전체 목차와 확정 사양
+    ├── STYLE.md                   집필 지침
+    ├── FACTS.md                   API 절차 검증 자료
+    ├── manuscript/
+    └── images/PROMPTS.md          표지·다이어그램 생성 프롬프트
 ```
+
+2권의 `TOC.md` · `STYLE.md` · `FACTS.md` 는 **집필용 문서로 위키독스에 게시하지 않습니다.** 원고를 여러 사람(또는 여러 에이전트)이 나눠 쓸 때 사실관계와 문체가 어긋나지 않게 붙잡아 주는 기준 문서입니다.
 
 **파일명 규칙** — 원고는 `manuscript/chNN/N-M.md` (예: `ch09/9-2.md` = 9장 2절). 장 도입부는 `N-0.md`.
 

@@ -76,66 +76,69 @@ chrome --headless --disable-gpu --screenshot=ch01-journey.png --window-size=2000
 - 인물이 들고 있는 것: 편지봉투가 아니라 **초록 점이 켜진 대시보드 화면의 폰**
 - 인물 앞에 자기 초대장이 **작은 입간판**처럼 서 있고, 거기에 **지도 핀**과 **날씨 구름**이 케이블로 꽂혀 있다
 
-### 이미지 생성 프롬프트 (글자 없는 그림만)
+### 이미지 생성 프롬프트 (제목 글자까지 한 번에)
 
-이미지 모델은 한글을 못 쓴다. **제목은 반드시 나중에 얹는다.** 아래는 그림만 뽑는 프롬프트다.
+1권 표지는 **제목 글자도 이미지 모델이 같이 그려낸 것**이다. 2권도 같은 방식으로 뽑는다. 대신 한글은 모델이 자주 뭉개므로, 문구를 프롬프트 안에서 **두 번 반복**하고 글자 수까지 못 박는다.
+
+부제와 시리즈 표기는 넣지 않는다. 1권 표지도 제목 두 줄뿐이고, 글자가 늘어날수록 깨질 확률만 올라간다.
 
 ```
-Flat vector illustration for a book cover, in the style of a friendly Korean webtoon sticker
-illustration. Thick black outlines, flat cel shading, almost no gradients inside objects,
-no photorealism, no 3D render gloss.
+A vertical book cover illustration, aspect ratio 10:13 (1000 x 1301).
+Style: friendly Korean webtoon sticker illustration — thick black outlines, flat cel
+shading, no photorealism, no 3D gloss, saturated cheerful colors.
 
-Scene: a young person with black hair, wearing a purple hoodie, blue jeans and white sneakers,
-standing on a bright green grassy hill, seen from behind at a three-quarter angle. They hold up
-a smartphone in one hand; the phone screen shows a simple dashboard of six stacked rounded tiles,
-three of them glowing green, one amber. In front of them stands a small signboard shaped like a
-web page — a rounded white card on a post. Two cables run from the signboard to two floating
-objects: a red map pin on the left and a fluffy white weather cloud with a small sun on the right.
-Far behind the person, small in the distance, stands an open dark doorway shaped like a code
-editor window, light spilling out of it — they have already walked through it.
-Green rolling hills, a winding path, chunky cartoon clouds, a few sparkle stars, and a small
-globe floating in the upper right.
+=== TEXT (must be rendered exactly, in Korean Hangul) ===
+Two lines of large bold Korean text across the TOP 28% of the cover:
 
-Background: a smooth diagonal gradient from deep violet purple in the top-left to bright cyan
-sky-blue in the bottom-right.
-Palette: violet purple, cyan blue, bright grass green, white, warm yellow accents, small touches
-of signal green and amber. Saturated and cheerful.
+Line 1 (white, 6 characters):  바이브코딩,
+Line 2 (bright yellow, 8 characters):  배포 다음의 세계
 
-Composition: vertical book cover, aspect ratio 10:13. Leave the TOP 30 PERCENT of the image
-visually calm and uncluttered — only sky and gradient there — because a large title will be
-placed over it later. All the illustration detail sits in the lower two-thirds.
+Typography: very heavy Korean gothic sans (extra-bold), tight letter spacing, each
+line stretched to fill the full width with equal left and right margins. Line 1 is
+pure white, line 2 is warm bright yellow. Every glyph has a thin dark outline and a
+soft drop shadow so it stays readable over the background. The two lines are stacked
+tightly, left-aligned to the same margin. Spell the Korean exactly as given:
+바이브코딩, / 배포 다음의 세계 — no other text anywhere on the cover.
 
-No text, no letters, no words, no numbers, no typography anywhere in the image.
+=== SCENE (lower two-thirds) ===
+A young person with black hair, purple hoodie, blue jeans and white sneakers, seen
+from behind at a three-quarter angle, standing on a bright green grassy hill. They
+hold up a smartphone; its screen shows a simple dashboard of six stacked rounded
+tiles, three glowing green and one amber. In front of them stands a small signboard
+shaped like a web page — a rounded white card on a post. Two cables run from that
+signboard to two floating objects: a red map pin on the left, and a fluffy white
+weather cloud with a small sun on the right. Far behind the person, small in the
+distance, an open dark doorway shaped like a code editor window, warm light spilling
+out of it — they have already walked through it.
+Rolling green hills, a winding path, chunky cartoon clouds, a few sparkle stars, and
+a small cartoon globe floating in the upper right.
+
+=== BACKGROUND & PALETTE ===
+Smooth diagonal gradient from deep violet purple in the top-left to bright cyan
+sky-blue in the bottom-right. Palette: violet, cyan, grass green, white, warm yellow,
+with small signal-green and amber accents.
+
+=== COMPOSITION ===
+Keep the top 28% calm — only sky and gradient behind the title. All illustration
+detail sits in the lower two-thirds. Nothing overlaps the text.
 ```
 
 **Negative prompt**
 
 ```
-text, letters, words, numbers, korean characters, typography, watermark, logo, signature,
-photorealistic, 3d render, realistic skin, detailed face, front-facing portrait, cluttered,
-busy background, dark, gloomy, neon cyberpunk, glitch, lens flare, motion blur, noise, grain,
-low contrast, muddy colors, extra limbs, deformed hands
+english text, latin letters, extra text, subtitle, watermark, logo, signature,
+garbled characters, broken hangul, misspelled korean, photorealistic, 3d render,
+detailed face, front-facing portrait, cluttered, dark, gloomy, neon cyberpunk,
+glitch, lens flare, blur, noise, low contrast, muddy colors, deformed hands
 ```
 
-### 제목 얹기 (그림 위에 직접)
+### 글자가 깨졌을 때
 
-1권과 같은 규칙으로 맞춘다. 안 그러면 시리즈로 안 보인다.
+한글은 **형태만 비슷하고 실제로는 틀린 글자**가 나오는 일이 흔하다. 확대해서 글자 하나하나를 확인한다. 특히 `바이브코딩,`의 **쉼표**와 `배포 다음의 세계`의 **띄어쓰기 두 곳**.
 
-| 항목 | 값 |
-|---|---|
-| 위치 | 상단, 이미지 높이의 위 25~30% |
-| 1행 | `바이브코딩,` — **흰색** |
-| 2행 | `배포 다음의 세계` — **노란색** |
-| 서체 | 아주 굵은 고딕 (Pretendard Black, 검은고딕, G마켓 산스 Bold 등) |
-| 처리 | 글자마다 얇은 어두운 외곽선. 1권과 같은 두께로 |
-| 자간 | 좁게. 두 행 모두 폭을 꽉 채워 좌우 여백을 맞춤 |
-
-2권은 제목 2행이 1권(`배포까지 완주`, 6자)보다 길다(`배포 다음의 세계`, 8자). **글자 크기를 줄이지 말고 자간을 좁혀서** 1권과 같은 덩치로 보이게 맞추는 편이 낫다.
-
-부제와 시리즈 표기는 제목 아래 작게 넣는다. 시리즈 표기가 있어야 1권 독자가 알아본다.
-
-- 부제: `API 연동과 관리자 페이지`
-- 시리즈: `「바이브코딩, 배포까지 완주」 후속편`
+- 같은 프롬프트로 여러 장 뽑아 멀쩡한 것을 고르는 게 가장 빠르다
+- 계속 깨지면 그림만 뽑고 제목은 직접 얹는다. 위 프롬프트에서 `=== TEXT ===` 절을 통째로 지우고, 네거티브에 `text, letters, korean characters, typography`를 추가한다. 서체는 Pretendard Black이나 G마켓 산스 Bold면 1권과 비슷하게 나온다
+- 2행이 1권(`배포까지 완주`, 6자)보다 두 자 길어서 모델이 글자를 작게 뽑는 경향이 있다. **글자 크기를 줄이지 말고 자간을 좁히는** 쪽이 맞다. 1권과 나란히 놨을 때 제목 덩치가 같아야 한다
 
 ### 만든 뒤 확인
 

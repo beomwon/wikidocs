@@ -6,7 +6,7 @@
 
 **API 연동과 관리자 페이지 —<br/>만든 사람에서 운영하는 사람으로.**
 
-[![위키독스에서 읽기](https://img.shields.io/badge/%EC%9C%84%ED%82%A4%EB%8F%85%EC%8A%A4-%EC%A7%80%EA%B8%88%20%EC%9D%BD%EA%B8%B0-2f6bff?style=for-the-badge)](https://wikidocs.net)
+[![위키독스에서 읽기](https://img.shields.io/badge/%EC%9C%84%ED%82%A4%EB%8F%85%EC%8A%A4-%EC%A7%80%EA%B8%88%20%EC%9D%BD%EA%B8%B0-2f6bff?style=for-the-badge)](https://wikidocs.net/book/20732)
 [![1권](https://img.shields.io/badge/1%EA%B6%8C-%EB%B0%B0%ED%8F%AC%EA%B9%8C%EC%A7%80%20%EC%99%84%EC%A3%BC-1d1d1f?style=for-the-badge)](https://wikidocs.net/book/20726)
 [![분량](https://img.shields.io/badge/12%EC%9E%A5%20%2B%20%EB%B6%80%EB%A1%9D%204%ED%8E%B8-66%EA%B0%9C%20%EC%A0%88-86868b?style=for-the-badge)](#목차)
 

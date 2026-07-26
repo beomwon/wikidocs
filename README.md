@@ -48,7 +48,7 @@ AI가 코드는 다 짜줍니다. 이 책은 당신이 AI에게 **"배포해줘"
 
 **12장 + 부록 4편 · 66개 절** · 집필 중
 
-[📁 원고 보기](vibe-after-deploy-book/)
+[📖 위키독스에서 읽기](https://wikidocs.net/book/20732) · [📁 원고 보기](vibe-after-deploy-book/)
 
 </td>
 </tr>

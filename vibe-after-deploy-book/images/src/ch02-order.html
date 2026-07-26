@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;background:#fff}</style></head>
+<body>
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="64" y="72" font-size="22" font-weight="700" fill="#1d1d1f" letter-spacing="-0.5">우리 주방이 못 만드는 요리는, 옆 가게에 주문서를 보낸다</text>
+
+  <!-- ============ 왼쪽 : 방문자 브라우저 (x 64..232) ============ -->
+  <rect x="64" y="196" width="150" height="80" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="88" y="228" font-size="14" font-weight="600" fill="#1d1d1f">방문자 브라우저</text>
+  <text x="88" y="250" font-size="12" fill="#86868b">초대장 화면</text>
+
+  <!-- 브라우저 <-> 내 서버 -->
+  <text x="257" y="212" text-anchor="middle" font-size="12" fill="#86868b">초대장 열기</text>
+  <line x1="220" y1="226" x2="290" y2="226" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="296,226 287,221.5 287,230.5" fill="#86868b"/>
+  <line x1="294" y1="252" x2="224" y2="252" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="216,252 225,247.5 225,256.5" fill="#86868b"/>
+
+  <!-- ============ 가운데 : 내 서버 패널 (x 300..550) ============ -->
+  <rect x="300" y="140" width="250" height="192" rx="12" fill="#f5f5f7"/>
+  <text x="320" y="176" font-size="15" font-weight="600" fill="#1d1d1f">내 서버 (FastAPI)</text>
+
+  <rect x="320" y="196" width="210" height="54" rx="10" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="344" y="220" font-size="14" font-weight="600" fill="#1d1d1f">화면 보내기</text>
+  <text x="344" y="240" font-size="12" fill="#86868b">초대장 HTML</text>
+
+  <rect x="320" y="262" width="210" height="54" rx="10" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="344" y="286" font-size="14" font-weight="600" fill="#1d1d1f">주문서 보내기</text>
+  <text x="344" y="306" font-size="12" fill="#86868b">받은 답을 화면에 넘김</text>
+
+  <!-- ============ 화살표 : 내 서버 <-> 옆 가게 (gap x 550..690) ============ -->
+  <text x="619" y="156" text-anchor="middle" font-size="12" font-weight="600" fill="#0071e3">주문서 (요청)</text>
+  <line x1="556" y1="170" x2="676" y2="170" stroke="#0071e3" stroke-width="1.5"/>
+  <polygon points="684,170 675,165.5 675,174.5" fill="#0071e3"/>
+
+  <line x1="682" y1="196" x2="562" y2="196" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="554,196 563,191.5 563,200.5" fill="#86868b"/>
+  <text x="619" y="218" text-anchor="middle" font-size="12" fill="#86868b">정해진 서식의 답</text>
+  <text x="619" y="234" text-anchor="middle" font-size="12" fill="#86868b">(JSON)</text>
+
+  <line x1="556" y1="286" x2="676" y2="286" stroke="#0071e3" stroke-width="1.5"/>
+  <polygon points="684,286 675,281.5 675,290.5" fill="#0071e3"/>
+  <line x1="682" y1="312" x2="562" y2="312" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="554,312 563,307.5 563,316.5" fill="#86868b"/>
+
+  <!-- ============ 오른쪽 : 옆 가게 두 곳 (x 690..936) ============ -->
+  <rect x="690" y="140" width="246" height="76" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="714" y="174" font-size="15" font-weight="600" fill="#1d1d1f">카카오 — 지도</text>
+  <text x="714" y="196" font-size="13" fill="#86868b">지도 조각을 브라우저로</text>
+
+  <rect x="690" y="256" width="246" height="76" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="714" y="290" font-size="15" font-weight="600" fill="#1d1d1f">기상청 — 날씨 예보</text>
+  <text x="714" y="312" font-size="13" fill="#86868b">단기예보 JSON</text>
+
+  <!-- ============ 주문서 상자 (x 64..384) ============ -->
+  <rect x="64" y="372" width="320" height="136" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="88" y="402" font-size="14" font-weight="600" fill="#1d1d1f">주문서 한 장</text>
+  <text x="88" y="432" font-size="13" fill="#1d1d1f">무엇을 — 오늘 서울 강남구 날씨</text>
+  <text x="88" y="462" font-size="13" fill="#1d1d1f">어떤 조건으로 — 오늘 오전 발표분</text>
+  <text x="88" y="492" font-size="13" fill="#1d1d1f">내가 누구인지 — 인증키</text>
+
+  <!-- 주문서 -> 기상청 점선 -->
+  <text x="600" y="412" font-size="12" fill="#86868b">이 주문서가 기상청으로</text>
+  <polyline points="384,424 813,424 813,340" fill="none" stroke="#86868b" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <polygon points="813,332 808.5,341 817.5,341" fill="#86868b"/>
+
+  <text x="64" y="554" font-size="13" fill="#86868b">API는 남의 서버에 보내는 주문서입니다. 답은 JSON이라는 정해진 서식으로 돌아옵니다.</text>
+</svg>
+</body></html>

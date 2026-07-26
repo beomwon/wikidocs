@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;background:#fff}</style></head>
+<body>
+<svg width="1000" height="680" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="1000" height="680" fill="#ffffff"/>
+  <text x="64" y="72" font-size="22" font-weight="700" fill="#1d1d1f" letter-spacing="-0.5">상태등 하나가 켜지기까지</text>
+
+  <!-- ===== 왼쪽 : 관리자 화면 ===== -->
+  <rect x="64" y="256" width="176" height="88" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="88" y="294" font-size="15" font-weight="600" fill="#1d1d1f">관리자 화면</text>
+  <text x="88" y="318" font-size="13" fill="#86868b">/admin</text>
+
+  <!-- 관리자 화면 → /api/health -->
+  <line x1="240" y1="300" x2="332" y2="300" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="340,300 331,295.5 331,304.5" fill="#86868b"/>
+  <text x="286" y="272" text-anchor="middle" font-size="12" fill="#86868b">30초마다</text>
+  <text x="286" y="288" text-anchor="middle" font-size="12" fill="#86868b">물어봄</text>
+
+  <!-- ===== 가운데 : /api/health 패널 ===== -->
+  <rect x="340" y="200" width="200" height="200" rx="12" fill="#f5f5f7"/>
+  <text x="364" y="240" font-size="13" fill="#86868b">상태 점검 창구</text>
+  <text x="364" y="270" font-size="17" font-weight="600" fill="#1d1d1f">/api/health</text>
+  <text x="364" y="312" font-size="12" fill="#86868b">네 군데를 대신</text>
+  <text x="364" y="332" font-size="12" fill="#86868b">찔러보고 결과를</text>
+  <text x="364" y="352" font-size="12" fill="#86868b">한 번에 돌려준다</text>
+
+  <!-- 패널 → 점검 대상 1 -->
+  <path d="M540,240 C572,240 566,172 588,172" fill="none" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="596,172 587,167.5 587,176.5" fill="#86868b"/>
+  <!-- 패널 → 점검 대상 2 -->
+  <line x1="540" y1="300" x2="588" y2="300" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="596,300 587,295.5 587,304.5" fill="#86868b"/>
+  <!-- 패널 → 점검 대상 3 -->
+  <path d="M540,360 C572,360 566,404 588,404" fill="none" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="596,404 587,399.5 587,408.5" fill="#86868b"/>
+
+  <!-- 관리자 화면 → 카카오맵 (출발점이 다르다) -->
+  <path d="M240,322 C300,322 300,520 360,520 L588,520" fill="none" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="596,520 587,515.5 587,524.5" fill="#86868b"/>
+  <text x="460" y="506" text-anchor="middle" font-size="12" font-weight="600" fill="#0071e3">브라우저에서만 확인 가능</text>
+
+  <!-- ===== 왼쪽 아래 : 왜 카카오맵만 다른가 ===== -->
+  <rect x="64" y="404" width="200" height="112" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="84" y="436" font-size="13" font-weight="600" fill="#1d1d1f">왜 카카오맵만 다른가</text>
+  <text x="84" y="462" font-size="12" fill="#86868b">지도는 브라우저에서</text>
+  <text x="84" y="482" font-size="12" fill="#86868b">그려집니다. 서버는</text>
+  <text x="84" y="502" font-size="12" fill="#86868b">그릴 수 없습니다</text>
+
+  <!-- ===== 오른쪽 : 점검 대상 네 개 ===== -->
+  <rect x="600" y="124" width="336" height="96" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <circle cx="624" cy="153" r="5" fill="#34c759"/>
+  <text x="642" y="158" font-size="14" font-weight="600" fill="#1d1d1f">이 서버 자신</text>
+  <text x="912" y="158" text-anchor="end" font-size="12" fill="#86868b">정상</text>
+  <text x="642" y="182" font-size="12" fill="#86868b">응답이 왔다는 것 자체가</text>
+  <text x="642" y="202" font-size="12" fill="#86868b">절반의 성공</text>
+
+  <rect x="600" y="240" width="336" height="96" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <circle cx="624" cy="269" r="5" fill="#34c759"/>
+  <text x="642" y="274" font-size="14" font-weight="600" fill="#1d1d1f">Neon 데이터베이스</text>
+  <text x="912" y="274" text-anchor="end" font-size="12" fill="#86868b">정상</text>
+  <text x="642" y="298" font-size="12" fill="#86868b">가장 가벼운 확인 쿼리 한 번</text>
+  <text x="642" y="318" font-size="12" fill="#86868b">몇 ms 걸렸나</text>
+
+  <rect x="600" y="356" width="336" height="96" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <circle cx="624" cy="385" r="5" fill="#ff9f0a"/>
+  <text x="642" y="390" font-size="14" font-weight="600" fill="#1d1d1f">기상청 날씨</text>
+  <text x="912" y="390" text-anchor="end" font-size="12" fill="#86868b">주의</text>
+  <text x="642" y="414" font-size="12" fill="#86868b">마지막 성공 시각을 본다</text>
+  <text x="642" y="434" font-size="12" fill="#86868b">(직접 부르지 않는다)</text>
+
+  <rect x="600" y="472" width="336" height="96" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <circle cx="624" cy="501" r="5" fill="#34c759"/>
+  <text x="642" y="506" font-size="14" font-weight="600" fill="#1d1d1f">카카오맵</text>
+  <text x="912" y="506" text-anchor="end" font-size="12" fill="#86868b">정상</text>
+  <text x="642" y="530" font-size="12" fill="#86868b">서버가 확인 못 함 — 화면에</text>
+  <text x="642" y="550" font-size="12" fill="#86868b">작은 지도를 실제로 띄워서 판정</text>
+
+  <text x="64" y="606" font-size="12" fill="#86868b">상태 확인이 스스로 할당량을 태우지 않게 — 날씨는 캐시된 값만 읽습니다.</text>
+  <text x="64" y="634" font-size="13" fill="#86868b">/api/health 창구가 대신 네 군데를 찔러보고, 그 결과가 카드의 색이 됩니다.</text>
+</svg>
+</body></html>

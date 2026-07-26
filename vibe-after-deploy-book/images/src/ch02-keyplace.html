@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;background:#fff}</style></head>
+<body>
+<svg width="1000" height="640" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="1000" height="640" fill="#ffffff"/>
+  <text x="64" y="72" font-size="22" font-weight="700" fill="#1d1d1f" letter-spacing="-0.5">키가 어디까지 내려가는가 — 두 경로는 다르게 생겼다</text>
+
+  <!-- ==================== 위쪽 : 카카오맵 ==================== -->
+  <text x="64" y="112" font-size="15" font-weight="600" fill="#1d1d1f">카카오맵 (JavaScript 키)</text>
+
+  <!-- 방문자 브라우저 -->
+  <rect x="64" y="132" width="180" height="122" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="88" y="162" font-size="15" font-weight="600" fill="#1d1d1f">방문자 브라우저</text>
+  <rect x="80" y="176" width="148" height="62" rx="8" fill="#f5f5f7"/>
+  <text x="100" y="196" font-size="10" fill="#1d1d1f">KAKAO_JS_KEY</text>
+  <text x="100" y="212" font-size="10" fill="#86868b">여기까지 내려옴</text>
+  <text x="100" y="228" font-size="10" fill="#86868b">숨길 수 없음</text>
+
+  <!-- 화살표 : 브라우저 -> 카카오 -->
+  <text x="357" y="179" text-anchor="middle" font-size="12" fill="#86868b">키를 들고 직접 요청</text>
+  <line x1="250" y1="193" x2="456" y2="193" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="464,193 455,188.5 455,197.5" fill="#86868b"/>
+
+  <!-- 카카오 지도 서버 -->
+  <rect x="470" y="132" width="250" height="122" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="494" y="170" font-size="15" font-weight="600" fill="#1d1d1f">카카오 지도 서버</text>
+  <text x="494" y="198" font-size="12" fill="#86868b">지도 조각을 내려준다</text>
+  <text x="494" y="220" font-size="12" fill="#86868b">브라우저가 직접 부른다</text>
+
+  <!-- 지키는 방법 -->
+  <line x1="357" y1="278" x2="357" y2="201" stroke="#0071e3" stroke-width="1.5"/>
+  <rect x="200" y="278" width="400" height="64" rx="12" fill="#ffffff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="224" y="304" font-size="13" font-weight="600" fill="#0071e3">지키는 방법 — 카카오에 내 도메인을 등록</text>
+  <text x="224" y="326" font-size="13" fill="#86868b">다른 사이트에서 이 키를 써도 지도가 안 뜬다</text>
+
+  <!-- 구분선 -->
+  <line x1="64" y1="368" x2="726" y2="368" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- ==================== 아래쪽 : 기상청 날씨 ==================== -->
+  <text x="64" y="406" font-size="15" font-weight="600" fill="#1d1d1f">기상청 날씨 (인증키)</text>
+
+  <!-- 방문자 브라우저 -->
+  <rect x="64" y="426" width="180" height="112" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="88" y="456" font-size="15" font-weight="600" fill="#1d1d1f">방문자 브라우저</text>
+  <rect x="80" y="470" width="148" height="52" rx="8" fill="#f5f5f7"/>
+  <text x="100" y="490" font-size="10" fill="#1d1d1f">WEATHER_SERVICE_KEY</text>
+  <text x="100" y="508" font-size="10" fill="#86868b">여기엔 없음</text>
+
+  <!-- 화살표 : 브라우저 -> 내 서버 -->
+  <text x="288" y="462" text-anchor="middle" font-size="11" fill="#86868b">/api/weather</text>
+  <text x="288" y="478" text-anchor="middle" font-size="11" fill="#86868b">에 물어봄</text>
+  <line x1="250" y1="490" x2="318" y2="490" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="326,490 317,485.5 317,494.5" fill="#86868b"/>
+
+  <!-- 내 서버 패널 -->
+  <rect x="332" y="414" width="200" height="120" rx="12" fill="#f5f5f7"/>
+  <text x="352" y="444" font-size="15" font-weight="600" fill="#1d1d1f">내 서버</text>
+  <rect x="352" y="458" width="160" height="60" rx="8" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="372" y="482" font-size="10" fill="#1d1d1f">WEATHER_SERVICE_KEY</text>
+  <text x="372" y="500" font-size="10" fill="#86868b">는 여기까지만</text>
+
+  <!-- 여기서 멈춤 : 패널 왼쪽 경계 굵은 선 -->
+  <line x1="332" y1="414" x2="332" y2="534" stroke="#0071e3" stroke-width="4"/>
+  <text x="332" y="554" text-anchor="middle" font-size="12" font-weight="600" fill="#0071e3">키는 여기서 멈춤</text>
+
+  <!-- 화살표 : 내 서버 -> 기상청 -->
+  <text x="580" y="462" text-anchor="middle" font-size="11" fill="#86868b">인증키를 들고</text>
+  <text x="580" y="478" text-anchor="middle" font-size="11" fill="#86868b">대신 다녀옴</text>
+  <line x1="540" y1="490" x2="610" y2="490" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="618,490 609,485.5 609,494.5" fill="#86868b"/>
+
+  <!-- 기상청 서버 -->
+  <rect x="624" y="440" width="110" height="80" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="648" y="472" font-size="15" font-weight="600" fill="#1d1d1f">기상청</text>
+  <text x="648" y="494" font-size="12" fill="#86868b">날씨 서버</text>
+
+  <!-- ==================== 오른쪽 요약 상자 ==================== -->
+  <rect x="752" y="236" width="184" height="204" rx="12" fill="#0071e3"/>
+  <text x="776" y="270" font-size="13" font-weight="600" fill="#ffffff">브라우저가 부르면</text>
+  <text x="776" y="294" font-size="12" fill="rgba(255,255,255,0.85)">키는 공개된다</text>
+  <text x="776" y="316" font-size="12" fill="rgba(255,255,255,0.85)">도메인으로 막는다</text>
+  <line x1="776" y1="344" x2="912" y2="344" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="776" y="372" font-size="13" font-weight="600" fill="#ffffff">서버가 부르면</text>
+  <text x="776" y="396" font-size="12" fill="rgba(255,255,255,0.85)">키는 숨는다</text>
+  <text x="776" y="418" font-size="12" fill="rgba(255,255,255,0.85)">밖으로 내보내지 않는다</text>
+
+  <text x="64" y="594" font-size="13" fill="#86868b">카카오맵 키는 숨길 수 없으니 도메인으로 막고, 날씨 키는 서버 밖으로 내보내지 않습니다.</text>
+</svg>
+</body></html>

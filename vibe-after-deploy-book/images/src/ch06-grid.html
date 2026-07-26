@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;background:#fff}</style></head>
+<body>
+<svg width="1000" height="650" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="1000" height="650" fill="#ffffff"/>
+  <text x="64" y="72" font-size="22" font-weight="700" fill="#1d1d1f" letter-spacing="-0.5">기상청은 위도·경도를 받지 않는다</text>
+
+  <!-- ================= Left : 5km grid ================= -->
+
+  <!-- 5km dimension marker over the first cell -->
+  <text x="100" y="118" text-anchor="middle" font-size="12" fill="#86868b">5km</text>
+  <line x1="64" y1="132" x2="136" y2="132" stroke="#86868b" stroke-width="1"/>
+  <line x1="64" y1="126" x2="64" y2="138" stroke="#86868b" stroke-width="1"/>
+  <line x1="136" y1="126" x2="136" y2="138" stroke="#86868b" stroke-width="1"/>
+
+  <!-- grid : 6 columns x 5 rows, 72px square -->
+  <line x1="64"  y1="150" x2="64"  y2="510" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="136" y1="150" x2="136" y2="510" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="208" y1="150" x2="208" y2="510" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="280" y1="150" x2="280" y2="510" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="352" y1="150" x2="352" y2="510" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="424" y1="150" x2="424" y2="510" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="496" y1="150" x2="496" y2="510" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="64" y1="150" x2="496" y2="150" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="64" y1="222" x2="496" y2="222" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="64" y1="294" x2="496" y2="294" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="64" y1="366" x2="496" y2="366" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="64" y1="438" x2="496" y2="438" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="64" y1="510" x2="496" y2="510" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- the one cell that matters -->
+  <rect x="208" y="294" width="72" height="72" fill="#0071e3"/>
+  <text x="244" y="326" text-anchor="middle" font-size="12" font-weight="600" fill="#ffffff">nx=60</text>
+  <text x="244" y="346" text-anchor="middle" font-size="12" font-weight="600" fill="#ffffff">ny=127</text>
+
+  <!-- map pin : triangle + circle only -->
+  <polygon points="233,268 255,268 244,292" fill="#0071e3"/>
+  <circle cx="244" cy="262" r="12" fill="#0071e3"/>
+  <circle cx="244" cy="262" r="4.5" fill="#ffffff"/>
+  <rect x="262" y="250" width="80" height="24" rx="6" fill="#ffffff"/>
+  <text x="270" y="267" font-size="13" font-weight="600" fill="#1d1d1f">모임 장소</text>
+
+  <text x="64" y="542" font-size="13" fill="#86868b">전국이 5km 칸으로 잘려 있고, 예보는 칸 단위로 나옵니다.</text>
+
+  <!-- ================= Right : address to nx, ny ================= -->
+
+  <!-- step 1 -->
+  <rect x="560" y="150" width="376" height="80" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="588" y="184" font-size="15" font-weight="600" fill="#1d1d1f">주소</text>
+  <text x="588" y="210" font-size="13" fill="#86868b">서울시 강남구 ○○로 12</text>
+
+  <line x1="600" y1="230" x2="600" y2="258" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="595,258 605,258 600,268" fill="#86868b"/>
+  <text x="620" y="253" font-size="12" fill="#0071e3">엑셀에서 찾기 (한 번만)</text>
+
+  <!-- step 2 -->
+  <rect x="560" y="276" width="376" height="112" rx="12" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="588" y="310" font-size="15" font-weight="600" fill="#1d1d1f">공식 격자 좌표 엑셀</text>
+  <text x="588" y="336" font-size="13" fill="#86868b">data.go.kr 참고문서 &gt; 활용가이드 압축파일</text>
+  <text x="588" y="358" font-size="13" fill="#86868b">안에 있는 '격자 X', '격자 Y' 열</text>
+
+  <line x1="600" y1="388" x2="600" y2="416" stroke="#86868b" stroke-width="1.5"/>
+  <polygon points="595,416 605,416 600,426" fill="#86868b"/>
+
+  <!-- step 3 -->
+  <rect x="560" y="434" width="376" height="80" rx="12" fill="#0071e3"/>
+  <text x="588" y="468" font-size="15" font-weight="600" fill="#ffffff">nx, ny 두 숫자</text>
+  <text x="588" y="494" font-size="13" fill="#ffffff">코드에 적어두고 끝</text>
+
+  <text x="560" y="542" font-size="13" fill="#86868b">옆 동네와 값이 같아도 정상입니다.</text>
+
+  <!-- caption -->
+  <text x="64" y="582" font-size="13" fill="#86868b">전국이 5km 격자로 나뉘어 있습니다. 모임 장소는 한 곳이니 평생 한 번만 찾으면 됩니다.</text>
+  <text x="64" y="604" font-size="13" fill="#86868b">그림 속 nx=60, ny=127은 예시 값입니다 — 실제 값은 엑셀에서 확인하세요.</text>
+</svg>
+</body></html>
